@@ -35,20 +35,20 @@ namespace :arduino do
   end
 
   desc 'rebuild and upload program'
-  task install: [:rebuild, :upload]
+  task install: [:build, :upload]
 
   desc 'rebuild program'
   task rebuild: [:clean, :build]
 
   desc 'compile project'
-  task build: OUTPUT_FILE
-
-  file OUTPUT_FILE do
+  task :build do
     sh "mkdir #{BUILD_DIR}" unless Dir.exist? BUILD_DIR
     sh "mkdir #{CACHE_DIR}" unless Dir.exist? CACHE_DIR
     sh "arduino-cli compile --fqbn #{FQBN} --build-path #{BUILD_DIR} --build-cache-path #{CACHE_DIR}\\
         --output #{OUTPUT_FILE}"
   end
+
+  file OUTPUT_FILE { Rake::Task['arduino:build'].invoke }
 
   desc 'upload program to board'
   task upload: OUTPUT_FILE do
