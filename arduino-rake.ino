@@ -7,9 +7,9 @@ void setup() {
 
 void loop() {
   digitalWrite(PIN, HIGH); 
-  Serial.print("HIGH");
+  Serial.print("HIGH\n");
   delay(1000);
   digitalWrite(PIN, LOW);
-  Serial.print("LOW");
+  Serial.print("LOW\n");
   delay(1000);
 }
