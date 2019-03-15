@@ -48,7 +48,9 @@ namespace :arduino do
         --output #{OUTPUT_FILE}"
   end
 
-  file OUTPUT_FILE { Rake::Task['arduino:build'].invoke }
+  file OUTPUT_FILE do
+    Rake::Task['arduino:build'].invoke
+  end
 
   desc 'upload program to board'
   task upload: OUTPUT_FILE do
