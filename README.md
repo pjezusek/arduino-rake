@@ -25,7 +25,7 @@ You can configure this script using following variables:
 Call commands using following pattern: `rake arduino:<command_name>`
 
 ### build
-Compiles project and create **BUILD_DIR** and **CACHE_DIR** if necessary
+Compile project and create **BUILD_DIR** and **CACHE_DIR** if necessary
 
 ### upload
 Upload project to board
@@ -34,7 +34,7 @@ Upload project to board
 Build and upload project
 
 ### check_tty
-Checks if **DEV_TTY** is properly configured
+Check if **DEV_TTY** is properly configured
 
 ### configure_tty
 Configure **DEV_TTY** using `stty`
@@ -43,7 +43,7 @@ Configure **DEV_TTY** using `stty`
 Run screen session on **DEV_TTY**
 
 # Template sketch
-Repository include simple sketch ready to testing board.
+Repository includes simple sketch ready to testing board.
 Just type `rake arduino:install` to build and upload program.
 It turns on and turns off LED built into arduino. It can be used also to test serial connection.
 
